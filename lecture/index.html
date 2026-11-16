@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#173a56">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:title" content="Методическая лаборатория — современный урок истории и обществоведения">
+<meta property="og:description" content="Четыре учебных часа: от замысла и методического конструктора к проектированию, анализу и самоанализу урока.">
+<title>Методическая лаборатория · 4 учебных часа</title>
+<style>
+:root{--ink:#193a46;--muted:#667983;--paper:#f6f4ef;--card:#fff;--line:#d9e1df;--navy:#193a46;--teal:#287b7b;--mint:#e7f0ef;--coral:#d36f52;--amber:#b98239;--shadow:0 12px 32px rgba(25,58,70,.08)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Segoe UI",Arial,sans-serif;line-height:1.55}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:10;background:rgba(246,244,239,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topin{max-width:1180px;margin:auto;padding:10px 20px;display:flex;gap:14px;align-items:center;justify-content:space-between}
+.brand{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.back{display:inline-flex;align-items:center;gap:7px;text-decoration:none;border:1px solid var(--line);border-radius:10px;background:white;padding:8px 12px;font-size:13px;font-weight:800}
+.back:hover,.link:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(25,58,70,.08)}
+.wrap{max-width:1180px;margin:auto;padding:0 20px 70px}
+.hero{margin:24px 0 20px;padding:38px;border-radius:24px;color:white;background:linear-gradient(120deg,#193a46,#287b7b);box-shadow:var(--shadow)}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:#bce5d9}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.03;margin:9px 0 12px;max-width:900px}
+.hero p{font-size:18px;color:#e7f0ef;max-width:820px;margin:0 0 20px}
+.metrics{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.metric{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.09);border-radius:13px;padding:9px 13px;min-width:125px}
+.metric b{display:block;font-size:20px}.metric span{font-size:12px;color:#dcebea}
+.actions{display:flex;flex-wrap:wrap;gap:9px}
+.link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:10px;padding:9px 13px;font-size:13px;font-weight:800;border:1px solid #d1dfdf;background:#edf4f3;color:#214f56;transition:.15s}
+.link.primary{background:#fff;color:var(--navy);border-color:#fff}
+.link.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+.link.small{font-size:12px;padding:7px 10px}
+.section{padding:24px 0 4px;scroll-margin-top:72px}
+.sectionhead{margin-bottom:14px}
+.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:900}
+h2{font-size:clamp(25px,3vw,34px);line-height:1.13;margin:4px 0 7px}
+.sectionhead p{margin:0;color:var(--muted);max-width:850px}
+.route{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.routeitem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;position:relative}
+.routeitem b{display:block;font-size:14px;margin-bottom:4px}.routeitem span{font-size:12px;color:var(--muted)}
+.routeitem em{font-style:normal;font-size:11px;color:var(--teal);font-weight:900}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 5px 16px rgba(25,58,70,.035);min-width:0}
+.card h3{font-size:18px;line-height:1.2;margin:7px 0 8px}
+.card p{margin:7px 0;color:var(--muted);font-size:14px}
+.tag{display:inline-block;background:var(--mint);color:#276c68;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+.hour{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:900}
+.task{border-left:3px solid var(--coral);background:#fbf3ee;border-radius:0 10px 10px 0;padding:10px 12px;margin-top:11px;font-size:13px}
+.product{font-size:12px;color:#315b5c;background:#f1f6f4;border-radius:10px;padding:9px 11px;margin-top:10px}
+.case{border-top:4px solid var(--teal)}
+.case.case-b{border-top-color:var(--amber)}
+.case .case-title{font-size:20px;font-weight:900;line-height:1.2;margin:8px 0}
+.case .meta{font-size:12px;color:var(--muted);font-weight:700}
+.case .actions{margin-top:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px 16px;margin:10px 0}
+summary{cursor:pointer;font-weight:900}
+.materials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+.mat{background:#fafcfb;border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0}
+.mat b{display:block;margin-bottom:4px;font-size:14px}
+.mat p{margin:0 0 8px;font-size:12px;color:var(--muted)}
+.mat .actions{gap:6px}
+.note{background:#fff8eb;border:1px solid #ead7b8;border-radius:14px;padding:14px 16px;margin:14px 0;font-size:13px}
+.note b{color:#825a26}
+.flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:18px 0}
+.flow span{background:#e7f0ef;border:1px solid #d4e3df;border-radius:999px;padding:8px 13px;font-size:12px;font-weight:900}
+.flow i{font-style:normal;color:var(--coral);font-weight:900}
+.footer{border-top:1px solid var(--line);margin-top:36px;padding:20px 0;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:850px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.route{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.wrap{padding:0 13px 45px}.hero{padding:25px 20px;border-radius:18px}.hero p{font-size:16px}.topin{padding:9px 13px}.brand{max-width:56%;line-height:1.2}.grid2,.materials{grid-template-columns:1fr}.grid4{grid-template-columns:1fr}.route{gap:7px}.routeitem{padding:11px}.card{padding:16px}.link{width:100%}.actions{width:100%}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand">История на Ты · методическая лаборатория</div>
+    <a class="back" href="../index.html#start">← К шестичасовой программе</a>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero" id="top">
+    <div class="kicker">Отдельная ветвь сайта · 4 учебных часа</div>
+    <h1>Современный урок истории и обществоведения</h1>
+    <p>От цели и методического конструктора — к функциональному заданию, проектированию урока, анализу и профессиональному самоанализу.</p>
+    <div class="metrics">
+      <div class="metric"><b>4 × 45</b><span>минут учебной работы</span></div>
+      <div class="metric"><b>2</b><span>сквозных предметных кейса</span></div>
+      <div class="metric"><b>1</b><span>проект урока на команду</span></div>
+    </div>
+    <div class="actions">
+      <a class="link primary" href="https://drive.google.com/file/d/14ie_q9IJDUT10lqwNYzB53tFiiok9g3C/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть обновлённую презентацию лекции · PPTX</a>
+      <a class="link primary" href="https://docs.google.com/document/d/1TZg4veDGA0DHOgNYHM3e9rILhLlAEKJp/edit?usp=drivesdk&amp;ouid=106118125966591473890&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Рабочий лист участника · DOCX</a>
+      <a class="link primary" href="https://drive.google.com/drive/folders/1SfieBLQ4-m4u7o4XaB6UvmYNEwFx25LM" target="_blank" rel="noopener noreferrer">Все материалы лекции · Google Drive</a>
+    </div>
+  </section>
+
+  <section class="section" id="route">
+    <div class="sectionhead">
+      <div class="eyebrow">Сквозная логика</div>
+      <h2>От замысла — к результату</h2>
+      <p>Каждый час добавляет следующий слой к одной методической разработке. Практические продукты накапливаются и используются в итоговой экспертизе.</p>
+    </div>
+    <div class="flow"><span>ЦЕЛЬ</span><i>→</i><span>ДЕЙСТВИЕ</span><i>→</i><span>СВИДЕТЕЛЬСТВО</span><i>→</i><span>КОРРЕКЦИЯ</span></div>
+    <div class="route">
+      <div class="routeitem"><em>01 · 45 МИН</em><b>Замысел</b><span>Тема, цель, тип, структура</span></div>
+      <div class="routeitem"><em>02 · 45 МИН</em><b>Инструменты</b><span>Приёмы, функциональные задания</span></div>
+      <div class="routeitem"><em>03 · 45 МИН</em><b>Сборка</b><span>Технологическая карта, экспертиза</span></div>
+      <div class="routeitem"><em>04 · 45 МИН</em><b>Анализ</b><span>Свидетельства результата, коррекция</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="hours">
+    <div class="sectionhead">
+      <div class="eyebrow">Содержание лекции-практикума</div>
+      <h2>Четыре учебных часа</h2>
+      <p>В каждом блоке есть теоретическая опора, конкретное действие участников и промежуточный результат.</p>
+    </div>
+    <div class="grid4">
+      <article class="card">
+        <div class="hour">01 / 04 · 45 минут</div>
+        <h3>От замысла — к цели</h3>
+        <p>А. А. Корзюк: дидактическая цель, тип, структура, диагностируемый результат.</p>
+        <div class="task"><b>Практика:</b> «Методический ремонт» — уточнить цель, определить ведущую задачу и придумать доказательство результата.</div>
+        <div class="product"><b>Продукт:</b> паспорт урока — тема, цель, тип и предварительная структура.</div>
+      </article>
+      <article class="card">
+        <div class="hour">02 / 04 · 45 минут</div>
+        <h3>От приёма — к деятельности</h3>
+        <p>А. А. Гин, конструктор Свентуховской и Юзвук, функциональные задания и интеллектуальный продукт.</p>
+        <div class="task"><b>Практика:</b> пересобрать задание «Культурный сундук» и создать функциональную задачу по истории Гомеля.</div>
+        <div class="product"><b>Продукт:</b> задание, в котором видны действие ученика, продукт и критерии проверки.</div>
+      </article>
+      <article class="card">
+        <div class="hour">03 / 04 · 45 минут</div>
+        <h3>Собираем урок</h3>
+        <p>Технологическая карта функционального урока, групповое проектирование, распределение ролей.</p>
+        <div class="task"><b>Практика:</b> «Архитекторы урока» — проектирование, взаимная экспертиза и обязательная доработка.</div>
+        <div class="product"><b>Продукт:</b> проект урока на 45 минут с заданиями, обратной связью и рефлексией.</div>
+      </article>
+      <article class="card">
+        <div class="hour">04 / 04 · 45 минут</div>
+        <h3>От проекта — к экспертизе</h3>
+        <p>Анализ открытого урока, самоанализ, критерии профессиональной экспертизы и коррекция.</p>
+        <div class="task"><b>Практика:</b> «Методический консилиум» по открытому уроку и самоанализ собственной разработки.</div>
+        <div class="product"><b>Продукт:</b> экспертное заключение и конкретная правка проекта.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="cases">
+    <div class="sectionhead">
+      <div class="eyebrow">Два сквозных кейса</div>
+      <h2>Работаем на реальных материалах</h2>
+      <p>Кейсы не противопоставляются как «удачный» и «неудачный». Каждый помогает увидеть разные стороны методического проектирования.</p>
+    </div>
+    <div class="grid2">
+      <article class="card case">
+        <span class="tag">Кейс А · обществоведение · 9 класс</span>
+        <div class="case-title">«Элитарная, народная и массовая культура»</div>
+        <div class="meta">Анализ целей, структуры, заданий и свидетельств результата.</div>
+        <p>В работе используются исходный конспект открытого урока, задание «Культурный сундук» и кейс «Культурный код Беларуси». Участники уточняют критерии классификации и добавляют аргументацию пограничных примеров.</p>
+        <div class="actions">
+          <a class="link small" href="https://docs.google.com/document/d/1sceeo8A6oNxdi9QctQyhCP_xmnhCwy8V/edit?usp=drivesdk&amp;ouid=106118125966591473890&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Открыть конспект открытого урока</a>
+        </div>
+      </article>
+      <article class="card case case-b">
+        <span class="tag">Кейс Б · история Гомеля · 11 класс</span>
+        <div class="case-title">От частновладельческого города к промышленному центру</div>
+        <div class="meta">Функциональные задания, групповой маршрут и причинно-следственный вывод.</div>
+        <p>Участники работают с историческими сведениями о владельцах города, населении, транспорте, хозяйстве и городской среде. Итог — аргументированное объяснение факторов преобразования Гомеля.</p>
+        <div class="actions">
+          <a class="link small" href="https://docs.google.com/document/d/1wcoDGP1SZ7PfJEbW3na8Y9_c2uARFjyC/edit?usp=drivesdk&amp;ouid=106118125966591473890&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Открыть основной материал урока</a>
+          <a class="link small" href="https://docs.google.com/document/d/1nvhcK_2pLRlkntrXpSPwCbo6jRuhJEIC/edit?usp=drivesdk&amp;ouid=106118125966591473890&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Материал «Гомель…» · 2025</a>
+        </div>
+      </article>
+    </div>
+    <div class="note"><b>Методическая оговорка.</b> В материалах по истории Гомеля обнаружено расхождение дат железнодорожного события (1858 и 1873 гг.). Перед использованием соответствующего задания и ключей дату необходимо проверить по надёжному историческому источнику.</div>
+  </section>
+
+  <section class="section" id="resources">
+    <div class="sectionhead">
+      <div class="eyebrow">Библиотека лекции</div>
+      <h2>Материалы и презентации</h2>
+      <p>Крупные документы хранятся в Google Drive, а GitHub Pages содержит только навигацию и ссылки. Так репозиторий остаётся лёгким, а материалы можно обновлять без повторной публикации сайта.</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <span class="tag">Основные материалы</span>
+        <h3>Презентация и рабочий лист</h3>
+        <p>Главная презентация четырёхчасовой лекции и объединённый практический лист «От замысла к функциональному уроку».</p>
+        <div class="actions">
+          <a class="link dark" href="https://drive.google.com/file/d/14ie_q9IJDUT10lqwNYzB53tFiiok9g3C/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Презентация · PPTX</a>
+          <a class="link" href="https://docs.google.com/document/d/1TZg4veDGA0DHOgNYHM3e9rILhLlAEKJp/edit?usp=drivesdk&amp;ouid=106118125966591473890&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Рабочий лист · DOCX</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag">Все материалы</span>
+        <h3>Папка лекции на Google Drive</h3>
+        <p>Полный комплект исходных документов, презентаций, методических материалов и иллюстраций.</p>
+        <div class="actions">
+          <a class="link dark" href="https://drive.google.com/drive/folders/1SfieBLQ4-m4u7o4XaB6UvmYNEwFx25LM" target="_blank" rel="noopener noreferrer">Открыть папку лекции</a>
+        </div>
+      </div>
+    </div>
+
+    <details open>
+      <summary>Методологические материалы и презентации</summary>
+      <div class="materials">
+        <div class="mat"><b>А. А. Корзюк · «Современный урок истории»</b><p>Отдельная презентация по типологии, структуре, целеполаганию и семи шагам планирования.</p><div class="actions"><a class="link small" href="https://docs.google.com/presentation/d/1AIluJ40KAVmeQh5fga6eAFodmq1Dlgm1/edit?usp=drivesdk&amp;ouid=106118125966591473890&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">Презентация · PPTX</a></div></div>
+        <div class="mat"><b>А. А. Гин · «Методический конструктор приёмов работы на уроке»</b><p>Матрица приёмов для начала урока, объяснения, закрепления, повторения, контроля и рефлексии.</p><div class="actions"><a class="link small" href="https://drive.google.com/file/d/10dzkDG5XTy3upwQiF6lr6XFtckKJ2GCJ/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PDF</a></div></div>
+        <div class="mat"><b>Г. Свентуховская, И. Юзвук · «Методический конструктор урока»</b><p>Материал и план лекции, включённые в методическую подборку.</p><div class="actions"><a class="link small" href="https://drive.google.com/file/d/1FwgDKfPcW-nn512h3Ww7cDhZWqHuLXpX/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PDF</a></div></div>
+        <div class="mat"><b>Л. А. Сушко · «Функциональный урок истории и обществоведения»</b><p>Функциональные задания как основа компетенций и интеллектуального продукта ученика.</p><div class="actions"><a class="link small" href="https://drive.google.com/file/d/1a5lIkKFTdkgGykvJiZRzIAje-pb7tf9u/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PDF</a></div></div>
+        <div class="mat"><b>Технологическая карта функционального урока</b><p>Этап, цель этапа, функциональные действия учителя и ученика, компетенции и интеллектуальный продукт.</p><div class="actions"><a class="link small" href="https://drive.google.com/file/d/1Q1078XxY1C9Ji0X8eduzDrEuL0SK83_c/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PDF</a></div></div>
+        <div class="mat"><b>Памятки анализа и самоанализа урока</b><p>Критерии профессиональной экспертизы и вопросы для рефлексии педагога.</p><div class="actions"><a class="link small" href="https://drive.google.com/file/d/14r4Nj54MeASxCBXEwClzPbEJXXQu0ngU/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">PDF</a><a class="link small" href="https://drive.google.com/file/d/1Mcm7zQdJY1pzWnXrjdrMyIVtMGD5FnwI/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">HTML</a></div></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Иллюстрации и дополнительные материалы по Корзюку</summary>
+      <div class="materials">
+        <div class="mat"><b>Материал 1 · А. А. Корзюк</b><div class="actions"><a class="link small" href="https://drive.google.com/file/d/1rpjswTKnlhes8Mryrc2KgQX4b0EwZgUi/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PNG</a></div></div>
+        <div class="mat"><b>Материал 2 · А. А. Корзюк</b><div class="actions"><a class="link small" href="https://drive.google.com/file/d/1LZNuLmxaCMEZoTQk8jZZLlMJrcqextWv/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PNG</a></div></div>
+        <div class="mat"><b>Материал 3 · А. А. Корзюк</b><div class="actions"><a class="link small" href="https://drive.google.com/file/d/172BBpNHdLXDWoF7zWVNw3hPYefvSyVny/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PNG</a></div></div>
+        <div class="mat"><b>Материал 4 · А. А. Корзюк</b><div class="actions"><a class="link small" href="https://drive.google.com/file/d/11IYy_cLBdPFBF7TLvyckhLHyGIJhFp-W/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть PNG</a></div></div>
+        <div class="mat"><b>Гомель · историческая фотография 1910 года</b><div class="actions"><a class="link small" href="https://drive.google.com/file/d/1SdF3zSGMmLQNEQCWyR4AxYDmWKyVg7ip/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Открыть изображение</a></div></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="selfcheck">
+    <div class="sectionhead">
+      <div class="eyebrow">Перед завершением практикума</div>
+      <h2>Что должно остаться у участника</h2>
+      <p>Итог — не коллекция приёмов, а обоснованная конструкция урока и понимание того, как проверить её результативность.</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Проектирование</h3>
+        <ul>
+          <li>паспорт урока: тема, цель, тип и структура;</li>
+          <li>функциональные задания и действия учащихся;</li>
+          <li>технологическая карта с продуктом и проверкой.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Экспертиза</h3>
+        <ul>
+          <li>критерии анализа готового конспекта;</li>
+          <li>свидетельства фактического результата;</li>
+          <li>самоанализ и конкретная коррекция.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Принципиальное различие:</b> анализ проекта урока позволяет оценить замысел и предусмотренные способы проверки. Самоанализ уже проведённого урока должен опираться на реальные ответы, работы учащихся и наблюдения, а не на предполагаемый результат.</div>
+    <div class="flow"><span>СПРОЕКТИРОВАЛ</span><i>→</i><span>ОБОСНОВАЛ</span><i>→</i><span>ПРОВЕРИЛ</span><i>→</i><span>УСОВЕРШЕНСТВОВАЛ</span></div>
+  </section>
+
+  <footer class="footer">
+    <span>«История на Ты» · Л. А. Сушко</span>
+    <a class="back" href="../index.html#start">← Вернуться к шестичасовой программе</a>
+  </footer>
+</main>
+</body>
+</html>
